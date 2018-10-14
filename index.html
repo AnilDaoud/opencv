@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello OpenCV.js</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <h1>OpenCV Experiments</h1>
+        <div id="accordion">
+            <h3>Input image</h3>
+            <div>
+                <img id="imageSrc" src="blob.jpg" alt="Default Image" />
+                <div>Source image: <input type="file" id="fileInput" name="file" /></div>
+            </div>
+            <h3>Circle detection</h3>
+            <div>
+                <button type="button" id="circlesButton">Circle Detection</button>
+                <button type="button" id="resetCircle">Reset Result</button>
+            <fieldset>
+                <legend>Hough Circles parameters</legend>
+                <table>
+                    <tr>
+                        <td>Minimum distance between circles: </td>
+                        <td>
+                            <div id="circleMinDist" style="width:260px; height:5px;">
+                                <div id="custom-handle-mindist" class="ui-slider-handle"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Param 1: </td>
+                        <td>
+                            <div id="circleParam1" style="width:260px; height:5px;">
+                                <div id="custom-handle1" class="ui-slider-handle"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Param 2: </td>
+                        <td>
+                            <div id="circleParam2" style="width:260px; height:5px;">
+                                <div id="custom-handle2" class="ui-slider-handle"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <div>
+                <canvas id="imageCanvas"></canvas>
+            </div>
+            </div>
+            <h3>Blob detection</h3>
+            <div>
+                <button type="button" id="blobButton">Blob Detection</button>
+                <button type="button" id="resetBlob">Reset Result</button>
+                <fieldset>
+                    <legend>Blob detector parameters</legend>
+                    <table id="blobParams"></table>
+                </fieldset>
+                <div>
+                    <canvas id="blobCanvas"></canvas>
+                </div>
+            </div>
+            <h3 id="status">Status: loading opencv.js...</h3>
+            <div>
+                <p>Nothing to see here</p>
+            </div>
+        </div>
+        <script>$( "#accordion" ).accordion({heightStyle: "content"});</script>
+        <script type="text/javascript" type="text/javascript" src ="SimpleBlobDetector.js"></script>
+        <script type="text/javascript" type="text/javascript" src ="main.js"></script>
+        <script async src="https://docs.opencv.org/3.4.3/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+    </body>
+</html>
